@@ -1,23 +1,32 @@
 import React, { useEffect, useState } from "react";
 
 function Score(props) {
-  const [count, setCount] = useState(0);
+  const [currentScore, setCurrentScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
 
   useEffect(() => {
     countScore();
+    recordBestScore();
   });
   const countScore = () => {
-    console.log("count me");
-    console.log(props.cards);
     let selectedCards = props.cards.filter((card) => card.selected === true);
     let selectedLength = selectedCards.length;
-    console.log(selectedCards);
-    console.log(selectedLength);
-    setCount(selectedLength);
+
+    setCurrentScore(selectedLength);
   };
 
-  console.log("I changed!");
-  return <div>Score {count}</div>;
+  const recordBestScore = () => {
+    if (bestScore < currentScore) {
+      setBestScore(currentScore);
+    }
+  };
+
+  return (
+    <>
+      <div>Score {currentScore}</div>
+      <div>Best Score {bestScore}</div>
+    </>
+  );
 }
 
 export default Score;
