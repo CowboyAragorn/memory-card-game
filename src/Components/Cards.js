@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from "react";
+import Score from "./Score";
 
 function Cards() {
   const [cards, setCards] = useState([
-    { name: 0, selected: false },
-    { name: 1, selected: false },
-    { name: 2, selected: false },
-    { name: 3, selected: false },
-    { name: 4, selected: false },
+    { name: "The Grapes of Wrath", selected: false },
+    { name: "The Sound and the Fury ", selected: false },
+    { name: "The Great Gatsby", selected: false },
+    { name: "To Kill a Mockingbird", selected: false },
+    { name: "Uncle Tom's Cabin", selected: false },
+    { name: "Their Eyes Were Watching God", selected: false },
   ]);
 
   useEffect(() => {
     console.log("component did mount");
+  }, [cards]);
+
+  const randomizeCards = () => {
     let currentIndex = cards.length;
     let cardsCopy = [...cards];
     while (currentIndex !== 0) {
@@ -22,15 +27,32 @@ function Cards() {
         cardsCopy[currentIndex],
       ];
     }
-    console.log(cardsCopy);
     setCards(cardsCopy);
-    console.log(cards);
-  }, []);
+  };
+  //onClick changes false selected to true, indicating whether a player has clicked the pic yet
+  const onClick = (i) => {
+    let cardsCopy = [...cards];
+    cardsCopy[i].selected = true;
+    setCards(cardsCopy);
+    randomizeCards();
+  };
 
+  const consoleLogg = () => {
+    console.log("consoleLogg");
+    console.log(cards);
+  };
+  consoleLogg();
   return (
     <>
-      {cards.map((card) => {
-        return <div>{card.name}</div>;
+      <Score cards={cards} />
+
+      {cards.map((card, i) => {
+        return (
+          <>
+            <button onClick={onClick.bind(this, i)}>{card.name}</button>
+            <br></br>
+          </>
+        );
       })}
     </>
   );
