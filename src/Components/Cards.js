@@ -1,18 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Score from "./Score";
+import originalCards from "./originalCards";
 
 function Cards() {
-  //creating a set of original cards to quickly reset game if
-  //a card is chose twice
-  const originalCards = [
-    { name: "The Grapes of Wrath", selected: false },
-    { name: "The Sound and the Fury ", selected: false },
-    { name: "The Great Gatsby", selected: false },
-    { name: "To Kill a Mockingbird", selected: false },
-    { name: "Uncle Tom's Cabin", selected: false },
-    { name: "Their Eyes Were Watching God", selected: false },
-  ];
-
+  //set cards state equal to imported original cards
   const [cards, setCards] = useState(originalCards);
 
   useEffect(() => {
@@ -48,23 +39,29 @@ function Cards() {
     }
   };
 
-  const consoleLogg = () => {
-    console.log("consoleLogg");
+  const consoleLogger = () => {
+    console.log("consoleLogger");
     console.log(cards);
   };
-  consoleLogg();
+  consoleLogger();
   return (
     <>
       <Score cards={cards} />
-
-      {cards.map((card, i) => {
-        return (
-          <div key={i}>
-            <button onClick={onClick.bind(this, i)}>{card.name}</button>
-            <br></br>
-          </div>
-        );
-      })}
+      <br></br>
+      <div id="cardsContainer">
+        {cards.map((card, i) => {
+          return (
+            <div key={i}>
+              <button className="cardBtn" onClick={onClick.bind(this, i)}>
+                <img src={card.url} alt="pic" className="img"></img>
+                <div>{card.name}</div>
+              </button>
+              <br></br>
+              <br></br>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 }
