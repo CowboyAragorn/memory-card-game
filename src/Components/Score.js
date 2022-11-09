@@ -23,8 +23,8 @@ function Score(props) {
 
   return (
     <>
-      <div>Score {currentScore}</div>
-      <div>Best Score {bestScore}</div>
+      <div>Score: {currentScore}</div>
+      <div>Best Score: {bestScore}</div>
     </>
   );
 }
