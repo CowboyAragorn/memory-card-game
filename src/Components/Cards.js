@@ -39,7 +39,6 @@ function Cards() {
 
   //set cards state equal to imported original cards
   const [cards, setCards] = useState(originalCards);
-  const [winScore, setWinScore] = useState(0);
   //Randomize order of the cards for game
   const randomizeCards = () => {
     let currentIndex = cards.length;
@@ -71,24 +70,9 @@ function Cards() {
     }
   };
 
-  //logs after the async updates to cards
-  const consoleLogger = () => {
-    console.log("consoleLogger");
-    console.log(cards);
-  };
-  //consoleLogger();
   return (
     <>
-      <div id="scoreHeader">
-        <h1 id="siteTitle">Great American Memory Game</h1>
-        <div id="score">
-          <Score cards={cards} />
-        </div>
-      </div>
-      <br></br>
-      <div id="instructions">
-        TO WIN: Click every book once without clicking the same book twice
-      </div>
+      <Score cards={cards} />
       <div id="cardsContainer">
         {cards.map((card, i) => {
           return (

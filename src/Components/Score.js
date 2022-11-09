@@ -40,15 +40,24 @@ function Score(props) {
 
   return (
     <>
-      <div>Score: {currentScore}</div>
-      <div>Best Score: {bestScore}</div>
-      <div id="popupScreen" className={togglePopup}>
-        <div id="winPopup" className={togglePopup}>
-          <p>You Won!</p>
-          <button id="popupBtn" onClick={hidePopup}>
-            Play Again
-          </button>
+      <div id="scoreHeader">
+        <h1 id="siteTitle">Great American Memory Game</h1>
+        <div id="score">
+          <div>Score: {currentScore}</div>
+          <div>Best Score: {bestScore}</div>
+          <div id="popupScreen" className={togglePopup}>
+            <div id="winPopup" className={togglePopup}>
+              <p>You Won!</p>
+              <button id="popupBtn" onClick={hidePopup}>
+                Play Again
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
+      <br></br>
+      <div id="instructions">
+        TO WIN: Click every book once without clicking the same book twice
       </div>
     </>
   );
