@@ -39,7 +39,7 @@ function Cards() {
 
   //set cards state equal to imported original cards
   const [cards, setCards] = useState(originalCards);
-
+  const [winScore, setWinScore] = useState(0);
   //Randomize order of the cards for game
   const randomizeCards = () => {
     let currentIndex = cards.length;
