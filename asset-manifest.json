@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/memory-card-game/static/css/main.f8286bc9.css",
+    "main.js": "/memory-card-game/static/js/main.10cb35a5.js",
+    "static/media/The_Sound_and_the_Fury_(1929_1st_ed_dust_jacket).jpg": "/memory-card-game/static/media/The_Sound_and_the_Fury_(1929_1st_ed_dust_jacket).c754d0c3cef568df9f84.jpg",
+    "static/media/To_Kill_a_Mockingbird_(first_edition_cover).jpg": "/memory-card-game/static/media/To_Kill_a_Mockingbird_(first_edition_cover).f972a6acf15793131837.jpg",
+    "static/media/The_Grapes_of_Wrath_(1939_1st_ed_cover).jpg": "/memory-card-game/static/media/The_Grapes_of_Wrath_(1939_1st_ed_cover).5b5f8d9234c84ef91505.jpg",
+    "static/media/The_Great_Gatsby.jpg": "/memory-card-game/static/media/The_Great_Gatsby.8273a08265f63fc3f1bc.jpg",
+    "static/media/uncle_toms_cabin.jpg": "/memory-card-game/static/media/uncle_toms_cabin.a6eff0a41a7bf35b014b.jpg",
+    "static/media/TheirEyesWereWatchingGod.jpeg": "/memory-card-game/static/media/TheirEyesWereWatchingGod.782137256e39eabbe034.jpeg",
+    "index.html": "/memory-card-game/index.html",
+    "main.f8286bc9.css.map": "/memory-card-game/static/css/main.f8286bc9.css.map",
+    "main.10cb35a5.js.map": "/memory-card-game/static/js/main.10cb35a5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f8286bc9.css",
+    "static/js/main.10cb35a5.js"
+  ]
+}
